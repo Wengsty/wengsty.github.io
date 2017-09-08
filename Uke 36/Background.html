@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wallpaper</title>
+
+    <style>
+
+
+        @keyframes slideIt {
+            0% {
+                background-image: url(bakgrunn01.jpg);
+            }
+
+            30% {
+                background-image: url(bakgrunn01.jpg);
+            }
+
+            35% {
+                background-image: url(bakgrunn02.jpg);
+            }
+
+            60% {
+                background-image: url(bakgrunn02.jpg);
+            }
+
+            65% {
+                background-image: url(bakgrunn03.jpg);
+            }
+
+            95% {
+                background-image: url(bakgrunn03.jpg);
+            }
+
+        }
+
+        body {
+            min-height: 100vh;
+            background-image: url("bakgrunn01.jpg");
+            background-size: cover;
+            background-position: center center;
+            animation: slideIt 8s infinite;
+        }
+
+    </style>
+</head>
+<body>
+
+</body>
+</html>
