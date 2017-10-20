@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sjakk_er_gøy</title>
+    <style>
+
+
+        body {
+            background-image: url("images/a-game-of-chess-hd-wallpaper-1920x1200.jpg");
+
+
+            background-size: cover;
+        }
+        @keyframes motion {
+            to {
+                background-position: 0 -9500px;
+            }
+        }
+
+
+        .sjakk {
+            background-image: url("images/sjakkremse5-01.png");
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            left: 400px;
+            top: 100px;
+            max-width: 100%;
+
+
+            animation: motion 2s steps(19) infinite;
+
+        }
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+        h1 {
+            font-family: 'Lobster Two', cursive;
+            color: white;
+            text-align: center;
+            animation: scale 6s infinite;
+        }
+
+
+        main {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              grid-gap: 12px;
+                }
+        image {
+               width: 100%;
+               height: auto;
+        }
+
+        @keyframes flyttMeg {
+            from {
+                margin-left: 0;
+            }
+            to {
+                margin-left: 250px;
+                border-radius: 50%;
+                background-color: navy;
+            }
+        }
+
+        @keyframes flyttMeg2 {
+            from {
+                margin-right: 0;
+            }
+            to {
+                margin-right: 200px;
+                border-radius: 50%;
+                background-color: navy;
+            }
+        }
+
+
+
+
+         @media (max-width: 1400px) {
+                    main {
+                        grid-template-columns: 1fr;
+                    }
+                }
+                @media (max-width: 850px) {
+                    main {
+                        grid-template-columns: 1fr;
+                    }
+                }
+        #firkant {
+            width: 50px;
+            height: 50px;
+            background-color: skyblue;
+            animation: flyttMeg 1s infinite alternate;
+        }
+
+        #firkant2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: skyblue;
+            animation: flyttMeg2 1s infinite alternate;
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+                transform: scale(1);
+            }
+            50% {
+                background-position: 4000% 4000%;
+                transform: scale(1.5);
+            }
+            100% {
+                background-position: -4000% -4000%;
+                transform: scale(1)
+            }
+        }
+
+        h2 {
+            font-family: 'Passion One', sans-serif;
+            font-size: 8rem;
+            background-image: url("images/chess_game_board_chess_pieces_light_60018_1920x1080.jpg");
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: move 50s infinite;
+            text-align: center;
+            margin: 450px 0;
+
+        }
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+<main>
+<h1>"A game of chess, by the setting sun"</h1>
+    
+    <div class="sjakk"></div>
+    <div class="prove1"></div>
+    <div id="firkant"></div>
+    <div id="firkant2"></div>
+<h2>IT</h2>
+</main>
+</body>
+</html>

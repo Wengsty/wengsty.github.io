@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sjakk_er_gøy</title>
+    <style>
+
+
+        body {
+            background-image: url("images/a-game-of-chess-hd-wallpaper-1920x1200.jpg");
+            width: 1920px;
+            height: 1200px;
+            max-width: 100%;
+        }
+        @keyframes motion {
+            to {
+                background-position: 0 -9500px;
+            }
+        }
+
+
+        .sjakk {
+            background-image: url("images/sjakkremse5-01.png");
+            height: 500px;
+            width: 500px;
+            position: absolute;
+            left: 350px;
+            top: 100px;
+            max-width: 100%;
+
+
+            animation: motion 2s steps(19) infinite;
+
+        }
+
+        h1 {
+            font-family: 'Lobster Two', cursive;
+            color: white;
+            text-align: center;
+        }
+
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 12px;
+        }
+        image {
+            max-width: 100%;
+        }
+        @keyframes catwalk {
+            to {
+                background-position: 0 -6000px;
+            }
+        }
+
+
+
+
+
+        @media (max-width: 1400px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 850px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+<h1>"A game of chess, by the setting sun"</h1>
+
+<div class="sjakk"></div>
+
+
+</body>
+</html>
