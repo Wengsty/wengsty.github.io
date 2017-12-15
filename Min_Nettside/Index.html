@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello</title>
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <style>
+
+
+
+        #cb {
+            display: none;
+        }
+        #burger {
+
+            margin-left: 20px;
+            margin-top: 15px;
+            display: flex;
+            width: 16px;
+            height: 16px;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        #burger > div {
+            background-color: black;
+            height: 2px;
+            transition: 0.1s;
+        }
+        #menu {
+            width: 300px;
+            background-color: antiquewhite;
+            position: absolute;
+            top: 50px;
+            left: -300px;
+            min-height: calc(100vh - 64px);
+            transition: 0.8s;
+            bottom: 0;
+        }
+        #cb:checked ~ #menu {
+            left: 0;
+        }
+        #cb:checked ~ #burger > div:first-child {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #cb:checked ~ #burger > div:nth-child(2) {
+            opacity: 0;
+        }
+        #cb:checked ~ #burger > div:last-child {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+        body {
+            font-family:'Caveat', cursive;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+
+        }
+        header {
+            filter: drop-shadow(0 5px 5px black);
+            background-color: white;
+
+        }
+        main {
+            background-color: floralwhite;
+            overflow: hidden;
+        }
+        body > footer {
+            background-color: darkblue;
+        }
+
+        body > header > nav {
+            display: grid;
+            grid-template-columns: 60px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            /* grid-auto-flow: column; */
+        }
+        body > header > nav > a {
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            color: lightslategrey;
+        }
+        .active {
+            background-color: darkblue;
+            color: white;
+        }
+        body > footer {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+            grid-auto-flow: column;
+            text-align: center;
+            z-index: 5;
+
+
+        }
+
+        body > main {
+            display: grid;
+            grid-template-rows: 1fr 80px;
+            align-items: center;  /* vertikal */
+            justify-items: center;      /* horisontal */
+            text-align: center;
+            background-image: url("Bilder/Top6Animes.png");
+            background-size: cover;
+            background-position: right top;
+
+        }
+        main h1 {
+            color: white;
+            font-size: 45px;
+            filter: drop-shadow(0 5px 5px black);
+
+        }
+        main h2 {
+            color: white;
+            filter: drop-shadow(0 5px 5px black);
+
+        }
+        main a {
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            background-color: darkblue;
+
+        }
+
+        body > footer img{
+            width: 80px;
+        }
+
+        @media (max-width: 750px) {
+            body > header > nav {
+                grid-auto-flow: row;
+            }
+        }
+        p {
+            font-family: sans-serif;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+
+    <nav>
+        <input type="checkbox" id="cb">
+        <label id="burger" for="cb">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </label>
+        <nav id="menu">
+            <h1>Om nettsiden</h1>
+
+            <p>Anime er animasjon assosiert med stilen de bruker til å animere (ofte CELL animasjon) i Japan etter WWII.</p>
+
+            <p> Det finnes flere tusener av Anime's og dette er noen av mine favoritter. Det er alt fra ninja-dominerte verdener
+            fult av overnaturlige krefter, serier der man følger antagonisten som har onde formål, til serier der man følger
+            skoleelver gjennom deres nokså vanlige hverdag. </p>
+
+            <p>Grunnen til at jeg ser på sånne serier er fordi jeg er fasinert
+            av tegnestilen og deres evne til å animere noe så kult.</p>
+
+            <p>Nettsiden inneholder noen Anime's jeg har sett og som jeg kan en del om, samt en liten nettside dedikert
+            til favoritt klubben, FCB.</p>
+        </nav>
+        <a href="Index.html" class="active">Anime</a>
+        <a href="Hyouka.html" >Hyouka</a>
+        <a href="Naruto.html">Naruto</a>
+        <a href="Death_note.html">Death Note</a>
+        <a href="Kimagure.html">Kimagure</a>
+        <a href="Tokyo_ghoul">Tokyo Ghoul</a>
+        <a href="Code_geass">Code Geass</a>
+
+    </nav>
+</header>
+<main>
+
+    <section class="head">
+
+<h1>•Velkommen•</h1>
+    </section>
+    <footer>
+        <a href="https://www.crunchyroll.com">Start å se</a>
+    </footer>
+</main>
+
+<footer>
+
+    <article>
+
+        <img src="Bilder/Artboard%201%20copy%202.png">
+
+    </article>
+
+    <article>
+        <img src="Bilder/Artboard%201%20copy%203.png">
+        <a href="Index.html"></a>
+    </article>
+
+</footer>
+
+
+
+</body>
+</html>
