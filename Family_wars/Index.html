@@ -3,21 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>God jul</title>
-</head>
-<style>
-   body {
-        display: grid;
-        grid-template-rows: 1fr 80px;
-        align-items: center;  /* vertikal */
-        justify-items: center;      /* horisontal */
-        text-align: center;
-        background-image: url("Family_blae.png");
-        background-size: cover;
-        background-position: right top;
+    <title>TheGrid</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+        header {
+            background-color: white;
+            filter: drop-shadow(0 5px 5px black);
 
-</style>
+        }
+        main {
+            background-color: skyblue;
+        }
+        body > footer {
+            background-color: darkslateblue;
+        }
+
+        body > header > nav {
+            display: grid;
+            grid-auto-flow: column;
+        }
+        body > header > nav > a {
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            color: lightslategrey;
+        }
+
+        .active {
+            background-color: darkslateblue;
+            color: white;
+        }
+        .active2 {
+            background-color: cadetblue;
+            color: white;
+        }
+        .active3 {
+            background-color: darkcyan;
+            color: white;
+        }
+        .active4 {
+            background-color: dodgerblue;
+            color: white;
+        }
+        body > footer {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+            grid-auto-flow: column;
+            text-align: center;
+
+
+        }
+
+        body > main {
+            display: grid;
+            grid-template-rows: 1fr 80px;
+            align-items: center;  /* vertikal */
+            justify-items: center;      /* horisontal */
+            text-align: center;
+            background-image: url("bilder/Family_blae.png");
+            background-size: cover;
+            background-position: right top;
+
+        }
+        main h1 {
+            color: white;
+            font-size: 45px;
+            filter: drop-shadow(0 5px 5px black);
+
+        }
+        main h2 {
+            color: white;
+            filter: drop-shadow(0 5px 5px black);
+
+        }
+        main a {
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            background-color: darkslateblue;
+        }
+
+        body > footer img{
+            width: 80px;
+        }
+
+        @media (max-width: 750px) {
+            body > header > nav {
+                grid-auto-flow: row;
+            }
+        }
+
+    </style>
+</head>
 <body>
+
+<header>
+    <nav>
+        <a href="#" class="active">God</a>
+        <a href="#" class="active2">Jul</a>
+        <a href="#" class="active3">Til</a>
+        <a href="#" class="active4">Mamma og Pappa</a>
+    </nav>
+</header>
+<main>
+
+</main>
+
+
 
 </body>
 </html>
