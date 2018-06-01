@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Velg din stil!</title>
+    <style>
+
+
+        html, body {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+
+
+        }
+
+        div {
+            width: 50%;
+            height: 100%;
+            float: left;
+
+        }
+
+        img {
+            size: auto;
+
+        }
+
+        #div1 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+
+        }
+        #div2 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+        }
+        #div1 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("bilder/vår/beautiful-blue-blur-247350.jpg");
+            background-size: cover;
+            background-position: top;
+
+        }
+
+        #div2 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("bilder/vår_mann/adult-bench-fashion-145803.jpg");
+            background-size: cover;
+            background-position: top;
+        }
+
+        #div1:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #div2:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+
+
+        @media (max-width: 450px) {
+            div {
+                width: 100%;
+                height: 50%;
+            }
+            div img {
+                width: 100%;
+                height: 50%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="div1">
+    <div id="hei1">
+
+    </div>
+</div>
+
+
+<div id="div2">
+    <div id="hei2">
+
+    </div>
+</div>
+
+<script>
+    document.getElementById("hei1").onclick = function () {
+        location.href = "vår.html";
+    };
+
+    document.getElementById("hei2").onclick = function () {
+        location.href = "vår_mann.html";
+    };
+</script>
+
+
+</body>
+</html>

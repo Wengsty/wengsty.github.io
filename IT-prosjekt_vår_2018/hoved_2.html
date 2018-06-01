@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <title>hoved2</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: 1fr 80px;
+            align-items: center;  /* vertikal */
+            justify-items: center;      /* horisontal */
+            text-align: center;
+            background-image: url("bilder/accessories-accessory-bag-322207.jpg");
+            background-size: cover;
+            background-position: right top;
+        }
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        #midten {
+            background-color: white;
+            padding: 8px;
+            position: center;
+            margin-top: 25%;
+            filter: drop-shadow(5px 5px 5px black);
+        }
+        body > footer {
+            display: grid;
+            grid-gap: 20px;
+            padding: 5px;
+            grid-auto-flow: column;
+            text-align: center;
+            z-index: 5;
+
+        }
+        body > footer {
+            background-color: #4CAF50;
+        }
+        body > footer > p {
+            color: white;
+        }
+        a {
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            background-color: #4CAF50;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="dropdown">
+    <button class="dropbtn">OutSpo</button>
+    <div class="dropdown-content">
+        <a href="hoved_2.html">Hjem</a>
+        <a href="SommerPickStyle.html">Sommer</a>
+        <a href="høst.html">Høst</a>
+        <a href="VinterPickStyle.html">Vinter</a>
+        <a href="VårPickStyle.html">Vår</a>
+    </div>
+</div>
+
+    <div id="midten">
+        <h1>OutSpo</h1>
+        <h2>OutSpo (Paronomasia: Outfit + Inspiration/Inspo)</h2>
+        <p>Hvilken stil blir du inspirert av?</p>
+        <p>Forksjellige årstider, forskjellige stiler.</p>
+        <p>Last opp din versjon av den inspirerte stilen!</p>
+    </div>
+
+<footer>
+    <a href="index.html">Picture-Nav</a>
+</footer>
+
+
+</body>
+</html>
