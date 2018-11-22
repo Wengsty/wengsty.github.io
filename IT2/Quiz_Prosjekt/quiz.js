@@ -16,7 +16,7 @@ function check(){
         correct++;
     }
 
-    var bilder = ["img/TrippieLikey.gif", "img/nesten.gif", "img/nei as.gif"];
+    var bilder = ["https://thumbs.gfycat.com/WarlikeGiganticDiamondbackrattlesnake-max-1mb.gif", "https://media.giphy.com/media/f9SzoxyV06VOSz7ARy/giphy.gif", "https://media1.tenor.com/images/9ad8bf7b8858376af2e2103bf4963296/tenor.gif?itemid=9866648"];
     var varsler = ["Da er vi i rute!", "Nesten innafor", "Dette var litt wack :/"];
     var score;
 
