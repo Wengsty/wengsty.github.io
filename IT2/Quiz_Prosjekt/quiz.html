@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>A(dam)llmenn kunnskaps Quiz</title>
+    <link href ="quiz.css" rel ="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src = "quiz.js"></script>
+
+</head>
+
+
+<body>
+<h1>Ting A(dam)lle burde kunne ;)</h1>
+
+
+<form id = "quiz" name = "quiz">
+
+
+    <p class = "sporsmaal">Hva heter artisten bak "Taking a walk"?</p>
+    <input id = "tekstboks" type = "text" name = "sporsmaal1">
+
+    <p class = "sporsmaal">Hva heter det nyeste albumet hans?</p>
+    <input type = "radio" id = "dab" name = "sporsmaal2" value = "Love scars 3">Love scars 3<br>
+    <input type = "radio" id = "dab" name = "sporsmaal2" value = "Life's a trip">Life's a trip<br>
+    <input type = "radio" id = "dab" name = "sporsmaal2" value = "Wish">Wish<br>
+    <input type = "radio" id = "dab" name = "sporsmaal2" value = "A love letter to you">A love letter to you<br>
+
+    <p class = "sporsmaal">Er prell bra for økonomien?</p>
+
+    <input type = "radio" id = "dab" name = "sporsmaal3" value = "joa"> joa<br>
+    <input type = "radio" id = "dab" name = "sporsmaal3" value = "nei"> nei<br>
+    <input type = "radio" id = "dab" name = "sporsmaal3" value = "er det no sak?"> er det no sak?<br>
+
+
+    <input id = "button" type = "button" value = "Lever Quiz" onclick = "check();">
+
+
+</form>
+
+<div id = "after_submit">
+    <p id = "number_correct"></p>
+    <p id = "varsler"></p>
+    <img id = "bilde">
+</div>
+</body>
+</html>
+
+
