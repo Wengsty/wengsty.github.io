@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trå Varsomt ;)</title>
+
+    <style>
+        html, body {
+            height: 100%; padding: 0; margin: 0;
+        }
+
+        div {
+            width: 50%; height: 50%; float: left;
+        }
+
+        img {
+            size: auto;
+        }
+
+        #div1 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+        }
+        #div2 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+        }
+        #div3 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+        }
+        #div4 {
+            position: relative;
+            transition: 0.5s;
+            z-index: 100;
+        }
+
+        #div1 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("img/S2SM.gif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #div2 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("img/Ski3.gif");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #div1:hover > div {
+            filter: none;
+
+
+        }
+
+        #div2:hover > div {
+            filter: none;
+
+        }
+
+        #div3 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("img/Japan1.gif");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        #div4 > div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image:url("img/KatyPerryQuiz.gif");
+            background-size: cover;
+            background-position: center;
+
+        }
+
+        div {
+            text-align: center;
+            font-size: 25px;
+            font-family: sans-serif;
+
+        }
+
+        div > h1 {
+            text-align: center;
+            padding-top: 25%;
+            opacity: 1;
+            position: center;
+        }
+
+        #div1:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        #div2:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+        }
+        #div3:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+        }
+        #div4:hover{
+            opacity: 1;
+            transition: 1s;
+            transform: scale(1.2);
+            z-index: 1;
+            cursor: pointer;
+
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="div1">
+    <div id="hei1">
+
+    </div>
+</div>
+
+
+<div id="div2">
+    <div id="hei2">
+
+    </div>
+</div>
+
+<div id="div3">
+    <div id="hei3">
+
+    </div>
+</div>
+
+<div id="div4">
+    <div id="hei4">
+
+    </div>
+</div>
+
+
+<script>
+    document.getElementById("hei1").onclick = function () {
+        location.href = "SommerPickStyle.html";
+    };
+
+    document.getElementById("hei2").onclick = function () {
+        location.href = "VårPickStyle.html";
+    };
+
+    document.getElementById("hei3").onclick = function () {
+        location.href = "høst.html";
+    };
+
+    document.getElementById("hei4").onclick = function () {
+        location.href = "VinterPickStyle.html";
+    };
+</script>
+
+</body>
+</html>
