@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppgave2</title>
+</head>
+<body>
+
+<ul id="treListe">
+
+</ul>
+<script>
+    let treListe = document.getElementById("treListe");
+
+    let traer = ["lønn","hassel","bjørk","eik","blodlønn","furu","gran"];
+
+    traer.push("fjellbjørk","dvergbjørk");
+    traer.splice(5,2);
+    traer.splice(2,1,"hengebjørk");
+    traer.splice(3,1);
+
+
+    for(let tre of traer){
+        console.log(tre);
+        treListe.innerHTML += "<li>" + tre +"</li>";
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppgave1</title>
+</head>
+<body>
+
+<ul id="handleListe">
+
+</ul>
+
+<script>
+    let handleListe = document.getElementById("handleListe");
+
+    let matvarer = ["Ost","Paprika","brød","kaviar"];
+
+    matvarer.unshift("Nugatti");
+
+    matvarer.pop();
+    matvarer.splice(2,1,"knekkebrød");
+
+    for(let mat of matvarer){
+        console.log(mat);
+        handleListe.innerHTML += "<li>" + mat +"</li>";
+    }
+
+
+
+</script>
+</body>
+</html>
