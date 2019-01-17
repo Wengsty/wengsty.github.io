@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppgave2</title>
+</head>
+<body>
+
+<ul id="bokListe">
+
+</ul>
+
+<script>
+    let boker = ["Percy Jackson", "Norwegian Wood", "Death Note", "NLH", "Dice Man"];
+
+    boker.sort(function (a,b){
+        if (a < b) return -1;
+        else if (a > b) return 1;
+        return 0;
+    });
+
+    let bokListe = document.getElementById("bokListe");
+
+    let i = 0;
+
+    for(let bok of boker){
+        i++;
+        bokListe.innerHTML += "<li>" + i + ": "  + bok + "</li>";
+    }
+
+
+</script>
+
+</body>
+</html>

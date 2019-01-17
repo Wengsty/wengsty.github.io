@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>oppgave1</title>
+</head>
+<body>
+
+<ul id="handleListe">
+
+</ul>
+
+<script>
+    let matvarer = ["ost","brød","paprika","kaviar"];
+
+    let handleListe = document.getElementById("handleListe");
+
+    let i = 0;
+
+    for(let mat of matvarer){
+        i++;
+        handleListe.innerHTML += "<li>" + i + ": " + mat + "</li>";
+    }
+</script>
+</body>
+</html>
