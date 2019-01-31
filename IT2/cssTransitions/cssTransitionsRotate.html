@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnimasjonRotate</title>
+    <style>
+
+        p{
+            margin-left: 40%;
+        }
+
+       #SnurreBassen{
+           width: 300px;
+           height: 30px;
+           background-color: whitesmoke;
+           transform-origin: left bottom;
+           transform: rotate(0deg);
+           transition: 1s;
+       }
+        #SnurreBassen:active{
+            transform: rotate(25deg);
+        }
+
+        #MiddleSnurr{
+            width: 300px;
+            height: 30px;
+            background-color: sandybrown;
+            transform-origin: center;
+            transform: rotate(0deg);
+            transition: 1s;
+        }
+        #MiddleSnurr:hover{
+            transform: rotate(60deg);
+        }
+
+        #BigBoi{
+            width: 300px;
+            height: 30px;
+            background-color: lightskyblue;
+            transform-origin: center;
+            transform: scale(1);
+            transition: 1s;
+        }
+        #BigBoi:hover{
+            transform: scale(2);
+        }
+
+    </style>
+</head>
+<body>
+
+<p id="SnurreBassen">
+    TrykkPåMeg
+</p>
+
+<p id="MiddleSnurr">
+    MiddleSnurr
+</p>
+
+<p id="BigBoi">
+    BigBoi
+</p>
+
+</body>
+</html>
