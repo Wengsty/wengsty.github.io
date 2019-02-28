@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #kjeks {
+            width: 150px;
+            position: absolute;
+            transition: 0.2s;
+        }
+
+    </style>
+</head>
+<body>
+<div id="divPoeng">Poeng: 0</div>
+<img id="kjeks" src="cookie2.png" alt="">
+
+
+<script>
+
+    // Referanser til HTML-elementer
+    const divPoeng = document.querySelector("#divPoeng");
+    const kjeks = document.querySelector("#kjeks");
+    const x = document.getElementById("Click-SoundBible.com-1387633738");
+
+    // Globale variabler
+    let poeng = 0;
+
+
+    // Setup
+    merPoeng(); // Funksjonen "merPoeng" starter i det siden lastes
+
+    // Hendelseslyttere
+    kjeks.onclick = gameLoop;
+    window.onkeydown = merPoeng;
+
+
+
+    // Funksjonsdefinisjoner
+    function gameLoop() {
+        merPoeng();
+        flyttMeg();
+
+    }
+
+    function merPoeng() {
+        poeng += 10;
+        divPoeng.innerHTML = `Poeng: ${poeng}`;
+
+    }
+
+    function flyttMeg() {
+        var xpos = Math.random()*(innerWidth - 100);
+        var ypos = Math.random()*(innerHeight - 100);
+        kjeks.style.left = xpos + "px";
+        kjeks.style.top = ypos + "px";
+        merPoeng.innerHTML = poeng + "poeng:";
+        x.play();
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

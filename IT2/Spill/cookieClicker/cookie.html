@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        #kjeks {
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="divPoeng">Poeng: 0</div>
+<img id="kjeks" src="cookie.png" alt="">
+
+
+<script>
+
+    // Referanser til HTML-elementer
+    const divPoeng = document.querySelector("#divPoeng");
+    const kjeks = document.querySelector("#kjeks");
+
+    // Globale variabler
+    let poeng = 0;
+
+    // Setup
+    merPoeng(); // Funksjonen "merPoeng" starter i det siden lastes
+
+    // Hendelseslyttere
+    kjeks.onclick = merPoeng;
+    window.onkeydown = merPoeng;
+
+    // Funksjonsdefinisjoner
+    function merPoeng() {
+        poeng += 1;
+        divPoeng.innerHTML = `Poeng: ${poeng}`;
+        requestAnimationFrame(merPoeng);
+    }
+
+
+</script>
+
+</body>
+</html>
