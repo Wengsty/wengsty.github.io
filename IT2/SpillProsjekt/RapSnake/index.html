@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>StackTheJoint</title>
+
+    <style>
+        canvas{
+            display: block;
+            margin: 0 auto;
+            background-color: brown;
+            position: center;
+            margin-top: 70px;
+        }
+
+    </style>
+
+</head>
+<body>
+<h1>
+
+</h1>
+
+<canvas id="snake" width="608" height="608"></canvas>
+
+<script>
+
+    const cvs = document.getElementById("snake");
+    const ctx = cvs.getContext("2d");
+
+    // Oppretter filteret/tuppen på jointen
+    const joint = 32;
+
+
+
+    // laster bildene for selve banen samt samleobjektene for å få poeng
+
+    const ground = new Image();
+    ground.src = "img/bane3p.png";
+    const foodImg = new Image();
+    foodImg.src = "img/weed123.png";
+
+
+    // laster lydfiler
+
+    let dead = new Audio();
+    let eat = new Audio();
+    let up = new Audio();
+    let right = new Audio();
+    let left = new Audio();
+    let down = new Audio();
+
+    dead.src = "lyd/Thug Life Sound Effect.mp3";
+    eat.src = "lyd/Snoop Dogg - Smoke Weed Everyday Sound Effect (music) for mlg.mp3";
+    up.src = "lyd/Tiny Button Push Sound Effect 2.mp3";
+    right.src = "lyd/Tiny Button Push Sound Effect 2.mp3";
+    left.src = "lyd/Tiny Button Push Sound Effect 2.mp3";
+    down.src = "lyd/Tiny Button Push Sound Effect 2.mp3";
+
+    // lager "jointen" større (legger på firkanter)
+
+    let snake = [];
+
+    snake[0] = {
+        x : 9 * joint,
+        y : 10 * joint
+    };
+
+    // lage snoop hoder/cannabis planter
+
+    let food = {
+        x : Math.floor(Math.random()*17+1) * joint,
+        y : Math.floor(Math.random()*15+3) * joint
+    }
+
+    // poengsummen starter på 0 hver gang spillet starter på nytt
+
+    let score = 0;
+
+    //Retningene som slangen skal gå styres av piltastene, tallene for piltastene kan sjekkes i konsollen
+
+    let d;
+
+    document.addEventListener("keydown",direction);
+
+    function direction(event){
+        let key = event.keyCode;
+        if( key === 37 && d !== "RIGHT"){
+            left.play();
+            d = "LEFT";
+        }else if(key === 38 && d !== "DOWN"){
+            d = "UP";
+            up.play();
+        }else if(key === 39 && d !== "LEFT"){
+            d = "RIGHT";
+            right.play();
+        }else if(key === 40 && d !== "UP"){
+            d = "DOWN";
+            down.play();
+        }
+    }
+
+    // passe på kollisjon function
+    function collision(head,array){
+        for(let i = 0; i < array.length; i++){
+            if(head.x === array[i].x && head.y === array[i].y){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Alle elementer som finnes i "canvas" tegnes her
+
+    function draw(){
+
+        ctx.drawImage(ground,0,0);
+
+        for( let i = 0; i < snake.length ; i++){
+            ctx.fillStyle = ( i === 0 )? "saddlebrown" : "whitesmoke";
+            ctx.fillRect(snake[i].x,snake[i].y,joint,joint);
+
+            ctx.strokeStyle = "saddlebrown";
+            ctx.strokeRect(snake[i].x,snake[i].y,joint,joint);
+        }
+
+        ctx.drawImage(foodImg, food.x, food.y);
+
+
+        // Den første firkanten
+        let snakeX = snake[0].x;
+        let snakeY = snake[0].y;
+
+        // Den første firkantens retning
+        if( d === "LEFT") snakeX -= joint;
+        if( d === "UP") snakeY -= joint;
+        if( d === "RIGHT") snakeX += joint;
+        if( d === "DOWN") snakeY += joint;
+
+        // Legger til poeng når den spiser, eller fjerner halen
+        if(snakeX === food.x && snakeY === food.y){
+            score++;
+            eat.play();
+            food = {
+                x : Math.floor(Math.random()*17+1) * joint,
+                y : Math.floor(Math.random()*15+3) * joint
+            }
+            // legger til score samt firkant
+        }else{
+            // de pålagte firkantene fjernes
+            snake.pop();
+        }
+
+        // legger til nytt hode/boks på rekken/slangen
+
+        let newHead = {
+            x : snakeX,
+            y : snakeY
+        };
+
+        // Game over
+
+        if(snakeX < joint || snakeX > 17 * joint || snakeY < 3*joint || snakeY > 17*joint || collision(newHead,snake)){
+            clearInterval(game);
+            dead.play();
+            alert("U got too dank, intoxicate to restart");
+            location.reload();
+
+        }
+
+        snake.unshift(newHead);
+
+        ctx.fillStyle = "white";
+        ctx.font = "45px Times New Roman";
+        ctx.fillText(score,2*joint,1.6*joint);
+    }
+
+    // starter "draw" funksjonen hvert 100ms
+
+    let game = setInterval(draw,100);
+
+</script>
+</body>
+</html>
