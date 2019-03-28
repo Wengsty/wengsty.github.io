@@ -2,7 +2,7 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>StackTheJoint</title>
+    <title>SnoopSpill</title>
 
     <style>
         canvas{
@@ -10,25 +10,84 @@
             margin: 0 auto;
             background-color: brown;
             position: center;
-            margin-top: 70px;
+            margin-top: 10px;
         }
+        body {
+            background-image: url("img/snoopBBBBB.jpg");
+        }
+        img {
+            position: fixed;
+
+        }
+
+        .snoop2{
+            margin-left: 920px;
+        }
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /*Gjemmer det som er inne i dropdown, altså href/linkene til smash og snoop*/
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Selve href/linkene*/
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Farven på linkene når man "hovrer" over dem */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+
+        /* Viser linkene når man "hovrer" over dropdown knappen */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Bytter farven på dropdown når den hovres over samt når linkene vises */
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+
 
     </style>
 
 </head>
-<body>
-<h1>
+<div class="dropdown">
+    <button class="dropbtn">Velg Tema</button>
+    <div class="dropdown-content">
+        <a href="index2.html">SMASH</a>
+        <a href="index.html">Snoop</a>
+    </div>
+</div>
 
-</h1>
+<body>
+
+<img src="img/snoop%20gif.gif">
+<img class="snoop2" src="img/snoop%20gif.gif">
 
 <canvas id="snake" width="608" height="608"></canvas>
 
 <script>
 
-    const cvs = document.getElementById("snake");
+    const cvs = document.getElementById("snake"); //henter canvas-elementet inn på nettsiden
     const ctx = cvs.getContext("2d");
 
-    // Oppretter filteret/tuppen på jointen
+    // Oppretter første firkanten, som er 32*32 (høyde*bredde) px.
     const joint = 32;
 
 
@@ -66,27 +125,30 @@
         y : 10 * joint
     };
 
-    // lage snoop hoder/cannabis planter
+    // lage cannabis planter (poengfirkanter)
 
     let food = {
         x : Math.floor(Math.random()*17+1) * joint,
         y : Math.floor(Math.random()*15+3) * joint
-    }
+    };
 
-    // poengsummen starter på 0 hver gang spillet starter på nytt
+    // poengsummen starter på 0 hver gang spillet starter på nytt, og setter at rekorden til 0
 
     let score = 0;
+    if(localStorage.rekord === undefined){
+        localStorage.rekord = 0;
+    }
+
+
+
+    let d; // funksjon for direksjoner
 
     //Retningene som slangen skal gå styres av piltastene, tallene for piltastene kan sjekkes i konsollen
-
-    let d;
-
     document.addEventListener("keydown",direction);
-
     function direction(event){
         let key = event.keyCode;
         if( key === 37 && d !== "RIGHT"){
-            left.play();
+            left.play(); // left,right,up og down.play er musikken som spilles av (som er lik). Her kunne jeg latt være å ha mange forskjellige navn på lyden, men beholder den, slik at det er mulig å gi dem forskjellige lyder.
             d = "LEFT";
         }else if(key === 38 && d !== "DOWN"){
             d = "UP";
@@ -100,8 +162,8 @@
         }
     }
 
-    // passe på kollisjon function
-    function collision(head,array){
+    // passe på kollisjon funksjon
+    function kollisjon(head,array){
         for(let i = 0; i < array.length; i++){
             if(head.x === array[i].x && head.y === array[i].y){
                 return true;
@@ -158,21 +220,28 @@
             y : snakeY
         };
 
-        // Game over
+        // Game over, når slangen/jointen treffer kanten. i tillegg kommer det en "alert" og mulighet for å starte spillet
+        // på nytt. Her spilles også lyden for "dead".
 
-        if(snakeX < joint || snakeX > 17 * joint || snakeY < 3*joint || snakeY > 17*joint || collision(newHead,snake)){
+        if(snakeX < joint || snakeX > 17 * joint || snakeY < 3*joint || snakeY > 17*joint || kollisjon(newHead,snake)){
             clearInterval(game);
-            dead.play();
-            alert("U got too dank, intoxicate to restart");
-            location.reload();
-
+            dead.play(); // spiller musikken som er satt når man "dør"
+            setTimeout(function(){alert("2Dank 4 ur own g00d... restart");
+                location.reload();}, 1000); // fikset en bug som gjorde slik at man døde før man traff veggen, la til delay på alerten (1000ms)
         }
 
         snake.unshift(newHead);
 
         ctx.fillStyle = "white";
-        ctx.font = "45px Times New Roman";
+        ctx.font = "20px Times New Roman";
         ctx.fillText(score,2*joint,1.6*joint);
+// rekorden settes etter bruker har nådd en score som er den høyeste til nå, denne bevares, og oppdateres om bruker får høyere score
+        if(score>localStorage.rekord){
+            localStorage.rekord = score;
+        }
+
+        ctx.fillText(`Rekord: ${localStorage.rekord}`,cvs.width-15*joint,1.6*joint); //fikser plasseringen til rekorden
+
     }
 
     // starter "draw" funksjonen hvert 100ms
